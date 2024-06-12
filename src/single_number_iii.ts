@@ -7,8 +7,8 @@
  * @returns An array containing the two elements that appear only once.
  */
 function SingleNumberIII(nums: number[]): number[] {
-    let myset = new Set<number>();
-    for (let num of nums) {
+    const myset = new Set<number>();
+    for (const num of nums) {
         if (myset.has(num)) {
             myset.delete(num);
         } else {

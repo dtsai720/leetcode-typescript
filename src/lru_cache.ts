@@ -51,7 +51,7 @@ class LRUCache {
      * @param node The node to add
      */
     addNode(node: DListNode) {
-        let prev = this.tail.prev;
+        const prev = this.tail.prev;
         if (prev === null) {
             throw new Error("prev is null");
         }
@@ -67,8 +67,8 @@ class LRUCache {
      * @param node The node to remove
      */
     removeNode(node: DListNode) {
-        let prev = node.prev;
-        let next = node.next;
+        const prev = node.prev;
+        const next = node.next;
 
         if (prev === null || next === null) {
             throw new Error("prev or next is null");
@@ -101,7 +101,7 @@ class LRUCache {
      */
     put(key: number, value: number): void {
         if (key in this.cache) {
-            let node = this.cache[key];
+            const node = this.cache[key];
             this.removeNode(node);
         } else if (Object.keys(this.cache).length == this.capacity) {
             const node = this.head.next;

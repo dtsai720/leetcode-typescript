@@ -10,7 +10,7 @@
 function SubarraySumsDivisibleByK(nums: number[], k: number): number {
     let output = 0;
     let sum = 0;
-    let array = new Array(k).fill(0);
+    const array = new Array(k).fill(0);
     array[0] = 1;
     for (const num of nums) {
         sum = (sum + (num % k) + k) % k;

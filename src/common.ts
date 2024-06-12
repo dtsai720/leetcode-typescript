@@ -12,7 +12,7 @@ function BinarySearch(array: number[], target: number): number {
     let left = 0,
         right = array.length - 1;
     while (left <= right) {
-        let mid = left + Math.floor((right - left) / 2);
+        const mid = left + Math.floor((right - left) / 2);
         if (array[mid] == target) return mid;
         if (array[mid] < target) left = mid + 1;
         else right = mid - 1;
@@ -36,7 +36,7 @@ function LowerBound(array: number[], target: number): number {
     let left = 0,
         right = array.length;
     while (left < right) {
-        let mid = left + Math.floor((right - left) / 2);
+        const mid = left + Math.floor((right - left) / 2);
         if (array[mid] < target) left = mid + 1;
         else right = mid;
     }

@@ -9,25 +9,17 @@
     "arrowParens": "avoid",
     "overrides": [
         {
-            "files": ["*.yaml", ".github/**/*.yaml", "**/.*.yaml"],
+            "files": ["*.yaml", ".github/**/*.yaml"],
             "options": {
                 "tabWidth": 2
             }
         },
         {
-            "files": ["*.json"],
+            "files": [".eslintrc", ".prettierrc", "*.json"],
             "options": {
                 "singleQuote": false,
                 "requirePragma": true,
                 "tabWidth": 4
-            }
-        },
-        {
-            "files": "*.md",
-            "options": {
-                "singleQuote": false,
-                "requirePragma": true,
-                "tabWidth": 2
             }
         }
     ]

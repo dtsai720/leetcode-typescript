@@ -17,7 +17,7 @@ function MaximumCompatibilityScoreSum(
         throw new Error("Students and mentors must have the same length");
     }
 
-    let array: number[][] = Array.from({ length: students.length }, () =>
+    const array: number[][] = Array.from({ length: students.length }, () =>
         Array(students.length).fill(0)
     );
 
@@ -35,7 +35,7 @@ function MaximumCompatibilityScoreSum(
         }
     }
 
-    let visited: boolean[] = Array(students.length).fill(false);
+    const visited: boolean[] = Array(students.length).fill(false);
     let output = 0;
 
     const dfs = (index: number, sum: number): void => {
