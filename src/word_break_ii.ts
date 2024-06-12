@@ -6,10 +6,10 @@ where each word is a valid dictionary word. Return all such possible sentences i
  * @return {string[]} All possible sentences.
 */
 function WordBreakII(s: string, words: string[]): string[] {
-    let output: string[] = [];
-    let dict: Set<string> = new Set(words);
-    let sizes: Set<number> = new Set();
-    for (let word of words) {
+    const output: string[] = [];
+    const dict: Set<string> = new Set(words);
+    const sizes: Set<number> = new Set();
+    for (const word of words) {
         sizes.add(word.length);
     }
 
@@ -19,8 +19,8 @@ function WordBreakII(s: string, words: string[]): string[] {
             return;
         }
 
-        for (let size of sizes) {
-            let word = s.slice(idx, idx + size);
+        for (const size of sizes) {
+            const word = s.slice(idx, idx + size);
             if (dict.has(word)) {
                 f(idx + size, [...array, word]);
             }

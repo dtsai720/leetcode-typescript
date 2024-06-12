@@ -12,7 +12,7 @@
 function CountTripletsThatCanFormTwoArraysOfEqualXor(nums: number[]): number {
     let output = 0,
         current = 0;
-    let cnt: Record<number, number> = { 0: 1 },
+    const cnt: Record<number, number> = { 0: 1 },
         total: Record<number, number> = { 0: 0 };
     for (let i = 0; i < nums.length; i++) {
         current ^= nums[i];

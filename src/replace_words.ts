@@ -12,6 +12,14 @@ class Trie {
     }
 
     /**
+     * Get the current node
+     * @returns current node
+     */
+    currentNode(): Trie {
+        return this;
+    }
+
+    /**
      * Insert word into the trie
      * @param word - word to insert
      * @returns void
@@ -20,12 +28,12 @@ class Trie {
      * and marking the last node as the end of the word
      */
     insert(word: string) {
-        let node: Trie = this;
-        for (let c of word) {
+        let node: Trie = this.currentNode();
+        for (const c of word) {
             if (!node.children.has(c)) {
                 node.children.set(c, new Trie());
             }
-            let childNode = node.children.get(c);
+            const childNode = node.children.get(c);
             if (childNode) {
                 node = childNode;
             }
@@ -41,10 +49,10 @@ class Trie {
      * by traversing the trie and returning the prefix
      */
     getRoot(word: string): string {
-        let node: Trie = this;
+        let node: Trie = this.currentNode();
         for (let i = 0; i < word.length; i++) {
-            let c = word[i];
-            let childNode = node.children.get(c);
+            const c = word[i];
+            const childNode = node.children.get(c);
             if (!childNode) break;
             if (childNode.isEnd) {
                 return word.slice(0, i + 1);
@@ -64,12 +72,12 @@ class Trie {
  * @description - replace the words in the sentence with the shortest prefix of the words in the dictionary
  */
 function replaceWords(dictionary: string[], sentence: string): string {
-    let trie = new Trie();
-    for (let word of dictionary) {
+    const trie = new Trie();
+    for (const word of dictionary) {
         trie.insert(word);
     }
-    let output: string[] = [];
-    for (let word of sentence.split(" ")) {
+    const output: string[] = [];
+    for (const word of sentence.split(" ")) {
         output.push(trie.getRoot(word));
     }
 

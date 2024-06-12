@@ -13,8 +13,8 @@ function SpecialArrayWithXElementsGreaterThanOrEqualX(nums: number[]): number {
     let min_value = 0,
         max_value = nums[nums.length - 1];
     while (min_value < max_value) {
-        let mid = min_value + Math.floor((max_value - min_value) / 2);
-        let idx = LowerBound(nums, mid);
+        const mid = min_value + Math.floor((max_value - min_value) / 2);
+        const idx = LowerBound(nums, mid);
 
         if (nums.length - idx == mid) return mid;
         if (nums.length - idx > mid) min_value = mid + 1;

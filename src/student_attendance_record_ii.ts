@@ -8,7 +8,7 @@ function StudentAttendanceRecordII(n: number): number {
     const MOD = 1e9 + 7;
     const MaxAbsent = 2;
     const MaxLate = 3;
-    let dp: number[][][] = Array.from({ length: n + 1 }, () =>
+    const dp: number[][][] = Array.from({ length: n + 1 }, () =>
         Array.from({ length: MaxAbsent }, () =>
             Array.from({ length: MaxLate }, () => 0)
         )

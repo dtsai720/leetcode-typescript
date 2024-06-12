@@ -2,14 +2,14 @@ import { WordBreakII } from "../src/word_break_ii";
 
 describe("WordBreakII", () => {
     it("example 1", () => {
-        let output = WordBreakII("catsanddog", [
+        const output = WordBreakII("catsanddog", [
             "cat",
             "cats",
             "and",
             "sand",
             "dog",
         ]);
-        let expected = ["cat sand dog", "cats and dog"];
+        const expected = ["cat sand dog", "cats and dog"];
         output.sort();
         expected.sort();
 
@@ -17,14 +17,14 @@ describe("WordBreakII", () => {
     });
 
     it("example 2", () => {
-        let output = WordBreakII("pineapplepenapple", [
+        const output = WordBreakII("pineapplepenapple", [
             "apple",
             "pen",
             "applepen",
             "pine",
             "pineapple",
         ]);
-        let expected = [
+        const expected = [
             "pine apple pen apple",
             "pine applepen apple",
             "pineapple pen apple",
@@ -36,14 +36,14 @@ describe("WordBreakII", () => {
     });
 
     it("example 3", () => {
-        let output = WordBreakII("catsandog", [
+        const output = WordBreakII("catsandog", [
             "cats",
             "dog",
             "sand",
             "and",
             "cat",
         ]);
-        let expected: string[] = [];
+        const expected: string[] = [];
         expect(output).toStrictEqual(expected);
     });
 });

@@ -9,8 +9,8 @@
  */
 function ContinuousSubarraySum(nums: number[], k: number): boolean {
     let sum = 0;
-    let set = new Set<number>();
-    for (let num of nums) {
+    const set = new Set<number>();
+    for (const num of nums) {
         sum = (sum + num) % k;
         if (set.has(sum)) return true;
         set.add((((sum - num) % k) + k) % k);
